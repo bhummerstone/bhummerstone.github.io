@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Back with a Bash!"
-date: 2016-09-05
+date: 2017-02-03
 ---
 
 Been a hectic past year, but I'll hopefully be updating this blog a bit more frequently now.
