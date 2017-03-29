@@ -5,10 +5,10 @@ layout: feed
 <feed xmlns="http://www.w3.org/2005/Atom">
 
 	<title>Cloudscaping</title>
-	<link href="http://bhummerstone.github.io/archive/atom.xml" rel="self"/>
-	<link href="http://bhummerstone.github.io/archive"/>
+	<link href="http://cloudscaping.co.uk/archive/atom.xml" rel="self"/>
+	<link href="http://cloudscaping.co.uk/archive"/>
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
-	<id>http://bhummerstone.github.io/archive</id>
+	<id>http://cloudscaping.co.uk/archive</id>
 	<author>
 		<name>Ben Hummerstone</name>
 	</author>
@@ -16,9 +16,9 @@ layout: feed
 	{% for post in site.posts %}
 		<entry>
 			<title>{{ post.title }}</title>
-			<link href="http://bhummerstone.github.io{{ post.url }}"/>
+			<link href="http://cloudscaping.co.uk{{ post.url }}"/>
 			<updated>{{ post.date | date_to_xmlschema }}</updated>
-			<id>http://bhummerstone.github.io/{{ post.id }}</id>
+			<id>http://cloudscaping.co.uk/{{ post.id }}</id>
 			<content type="html">{{ post.content | xml_escape }}</content>
 		</entry>
 	{% endfor %}

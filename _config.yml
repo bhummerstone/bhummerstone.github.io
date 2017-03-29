@@ -3,7 +3,7 @@ title: Cloudscaping
 description: >
   A blog
 baseurl: ""
-url: ""
+url: "cloudscaping.co.uk"
 
 # Build settings
 markdown: kramdown
