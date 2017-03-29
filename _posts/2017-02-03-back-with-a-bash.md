@@ -18,5 +18,3 @@ Installation can be a bit tricksy, but these are the rough steps. Note you will 
 3. Open a command prompt as administrator, and run the command "bash". You'll need to create a username, and you're all set!
 
 There are a few things that don't quite work yet, and this is very much a beta release, but it is a pretty good Bash experience; no need for Putty anymore, at least!
-
-Next time, I'll talk about some adventures with the Azure CLI.
