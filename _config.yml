@@ -1,3 +1,12 @@
+# Site settings
+title: Cloudscaping
+description: >
+  A blog
+baseurl: ""
+url: ""
+
+# Build settings
+markdown: kramdown
 theme: jekyll-theme-cayman
 
 # Includes an icon in the footer for each user name you enter
