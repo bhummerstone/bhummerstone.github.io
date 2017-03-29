@@ -1,1 +1,6 @@
 theme: jekyll-theme-cayman
+
+# Includes an icon in the footer for each user name you enter
+footer-links:
+  github: bhummerstone
+  twitter: bhummerstone
