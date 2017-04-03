@@ -2,14 +2,16 @@
 title: Cloudscaping
 description: >
   A blog
-baseurl: ""
+baseurl: /
 url: "cloudscaping.co.uk"
+permalink: /:year/:month/:day/:title/
 
 # Build settings
 markdown: kramdown
 theme: jekyll-theme-cayman
 
-# Includes an icon in the footer for each user name you enter
-footer-links:
+# About/contact
+author:
+  name: Ben Hummerstone
   github: bhummerstone
   twitter: bhummerstone

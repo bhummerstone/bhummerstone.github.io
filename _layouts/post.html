@@ -2,16 +2,38 @@
 layout: default
 ---
 
-<article class="post">
+<div class="post">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <span class="post-date">{{ page.date | date: "%-d %B %Y" }} &middot; Filed in <a href="{{ site.url }}/categories/#{{ page.categories }}">{{ page.categories }}</a></span>
+  {{ content }}
+  <span class="post-date">Tags:
+    {% assign page_tags = page.tags | sort %}
+    {% include page_tags_list %}
+  </span>
+  {% if page.previous %}
+    <span class="post-date">
+    <i class="fa fa-arrow-circle-left"></i> Previous Post: <a href="{{ page.previous.url }}">{{ page.previous.title }}</a></span>
+  {% endif %}
+  {% if page.next %}
+    <span class="post-date">
+    Next Post: <a href="{{ page.next.url }}">{{ page.next.title }}</a> <i class="fa fa-arrow-circle-right"></i></span>
+  {% endif %}
 
-  <h1>{{ page.title }}</h1>
+  <span class="post-sharing">{% include social_sharing.html %}</span>
+</div>
 
-  <div class="entry">
-    {{ content }}
-  </div>
-
-  <div class="date">
-    Written on {{ page.date | date: "%B %e, %Y" }}
-  </div>
-  
-</article>
+<div class="related">
+  <h2>Recent Posts</h2>
+  <ul class="related-posts">
+    {% for post in site.related_posts limit:3 %}
+      <li>
+        <h3>
+          <a href="{{ site.url }}{{ post.url }}">
+            {{ post.title }}
+            <small>{{ post.date | date_to_string }}</small>
+          </a>
+        </h3>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
