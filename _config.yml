@@ -3,7 +3,7 @@ title: Cloudscaping
 description: >
   A blog
 baseurl: /
-url: "cloudscaping.co.uk"
+url: http://cloudscaping.co.uk
 permalink: /:year/:month/:day/:title/
 
 # Build settings

@@ -18,17 +18,23 @@ You can get the Azure CLI v2 from [here](https://docs.microsoft.com/en-us/cli/az
 
 Once you are set up with an Azure account and the CLI, open up a terminal/command prompt and run:
 
-    #az login
+{% highlight bash %}
+    az login
+{% endhighlight %}
 
 This will prompt you with a code, and you will need to open a web browser to http://aka.ms/devicelogin, enter the code, and login to your Azure account. Once this is complete, you will then be authenticated from the CLI.
 
 Alternatively, depending on your account security settings, you can login using:
 
-    #az login -u <username> -p <password>
+{% highlight bash %}
+    az login -u <username> -p <password>
+{% endhighlight %}
 
 Next step is to create a new Resource Group in Azure to contain all of the resources we are going to be creating. The code for this is:
 
-    #Az group create --name k8scicd --location westeurope
+{% highlight bash %}
+    Az group create --name k8scicd --location westeurope
+{% endhighlight %}
 
 Note: I'm using West Europe for everything as part of this series, as it contains all of the services that 
 Az acs create  --name k8scicd --resource-group k8scicd  --orchestrator-type kubernetes --dns-prefix bhk8s --verbose
