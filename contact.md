@@ -8,4 +8,4 @@ Twitter: <a href="http://twitter.com/{{site.owner.twitter}}">{{site.owner.twitte
 
 GitHub: <a href="http://github.com/{{site.owner.github}}">{{site.owner.github}}</a>
 
-Email: <a href="mailto:{{site.email}}">{{site.email}}</a>
+Email: <a href="mailto:{{site.owner.email}}">{{site.owner.email}}</a>

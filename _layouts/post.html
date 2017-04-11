@@ -2,7 +2,7 @@
 layout: default
 ---
 <h1 class="post-headline">{{page.title}}</h1>
-<div class="meta"><span>{{page.date | site.date}}</span></div>
+<div class="meta"><span>{{page.date | date: "%-d %B %Y"}}</span></div>
 
 {{content}}
 
