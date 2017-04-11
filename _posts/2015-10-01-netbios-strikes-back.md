@@ -14,6 +14,6 @@ However, I remembered the NETBIOS problems from last time, and realised that I c
 
 You can configure the DNS suffix search list using the GUI, via a GPO, or by using the following PowerShell command:
 
-``` PowerShell
+```powershell
 Set-DNSClientGlobalSetting –SuffixSearchList “domain1.co.uk”,”domain2.co.uk”
 ```

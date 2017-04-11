@@ -21,20 +21,20 @@ As an aside, I would recommend that you start getting into the habit of beginnin
 
 You’ll also need to set the DNS servers, if required, which can be done using the following command:
 
-``` PowerShell
+```powershell
 Set-DNSClientServerAddress –InterfaceAlias “Ethernet” –ServerAddresses “192.168.10.4”,”192.168.10.5”
 ```
 
 Next, a slightly more atypical operation: disabling NETBIOS. This can give some performance advantage benefits on networks that do everything using IP addresses, such as Live Migration and Cluster networks:
 
-``` PowerShell
+```powershell
 $adapter = Get-WMIObject Win32_NetworkAdapterConfiguration | ? {$_.Index -eq ((Get-NetAdapter –Name “Ethernet”).ifIndex)}
 $adapter.SetTCPIPNetbios(2)
 ```
 
 Finally, another more advanced operation: disabling DNS registration for a network adapter. This can be useful from a management perspective when dealing with multiple network adapters in a system that you don’t want in DNS e.g. Cluster networks. The command is as follows:
 
-``` PowerShell
+```powershell
 Set-DNSclient -InterfaceAlias "Ethernet" -RegisterThisConnectionsAddress:$false
 ```
 PowerShell is not going away any time soon, so start small with some basic server configuration, and then think about working your way up to more advanced operations; there’s a wealth of information out there, so don’t be afraid to give it a go!

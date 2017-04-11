@@ -11,7 +11,8 @@ I recently had the opportunity to work on a Proof of Concept for a hosting provi
 However, during my testing, I found that the VMs that were created on these virtual networks could not get access to the internet. They were able to ping IP addresses with no problem, but could not resolve any DNS names.
 
 Upon further investigation, I was able to use the PowerShell command
-``` PowerShell 
+
+```powershell
 Resolve-DNSName –Name <dns_name> –TCPOnly
 ``` 
 to resolve the necessary IP addresses. After a bit more digging, I discovered that all UDP traffic was being dropped, and since DNS uses UDP port 53, that is why my VMs couldn’t connect to DNS. What could cause just UDP traffic to be dropped? The answer was NVGRE offloading.
