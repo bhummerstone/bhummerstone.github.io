@@ -19,7 +19,7 @@ One of our customers has done just that. Users request new virtual (or physical)
 6. During the build process, the task sequence invokes an SCOrch runbook to email the IT department with the current build phase
 7. As the final step of the task sequence, a separate SCOrch runbook is invoked to email the original requesting user (and the IT team) that the build has completed successfully
 
-![Workflow overview]({{ site.url }}/assets/automation-in-action.jpg)
+![Workflow overview]({{ site.url }}/images/automation-in-action.jpg)
 
 One of the great things about this process is that it works equally well for both physical and virtual machines. In addition, it works for any virtual environment: VMware, Citrix and Microsoft all provide PowerShell modules for remote management of virtual hosts, so programmatically creating and managing VMs has never been easier.
 
