@@ -3,6 +3,7 @@
 title: cloudscaping
 url: http://cloudscaping.co.uk
 email: b.hummerstone@outlook.com
+date: "%-d %B %Y"
 
 # Site owner
 owner:
