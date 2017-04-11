@@ -1,13 +1,14 @@
 ### Site settings
 
 title: cloudscaping
-url: http://cloudscaping.co.uk # name of the repository
+url: http://cloudscaping.co.uk
 email: b.hummerstone@outlook.com
 
 # Site owner
 owner:
   name: Ben Hummerstone
   twitter: bhummerstone
+  github: bhummerstone
   google:
     ad-client:
     ad-slot:

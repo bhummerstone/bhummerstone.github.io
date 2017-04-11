@@ -1,13 +1,14 @@
 ---
-title: About Hagura
+title: About
 layout: post
 permalink: /about/
 published: true
 ---
 
-For more themes please visit [https://jekyll-themes.com](https://jekyll-themes.com){: target="_blank"}
+I'm Ben Hummerstone, and welcome to Cloudscaping!
 
-Does the theme deserve a star?
+This is my personal blog about cloud technologies, and anything else that comes to mind.
 
-<a class="github-button" href="https://github.com/sharu725/hagura" data-style="mega" data-count-href="/sharu725/hagura/stargazers" data-count-api="/repos/sharu725/hagura#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star sharu725/hagura on GitHub">Star</a>
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+I currently work as a Cloud Solutions Architect at Microsoft.
+
+Any opinions expressed here are my own, and nothing to do with my employer.
