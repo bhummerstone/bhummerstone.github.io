@@ -1,55 +1,48 @@
 ---
-sitemap: false
+# Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-/*
- *
- *  Skinny Bones Jekyll Starter
- *
- *  Designer: Michael Rose
- *  Twitter: http://twitter.com/mmistakes
- *
-*/
+@charset "utf-8";
 
-@import "variables";
+$base-font-family: 'Work Sans', sans-serif;
+$base-font-size:   20px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.7;
 
-/*
-   Vendor
-   ========================================================================== */
+$spacing-unit:     30px;
 
-@import "vendor/bourbon/bourbon";
-@import "grid-settings";
-@import "vendor/neat/neat";
-@import "vendor/font-awesome/font-awesome";
+$text-color:       #333;
+$background-color: #fdfdfd;
+$brand-color:      #60c17d;
 
-/*
-   Global
-   ========================================================================== */
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
 
-@import "mixins";
-@import "reset";
-@import "base";
+// Width of the content area
+$content-width:    800px;
+$on-palm:          600px;
+$on-laptop:        1000px;
 
-/*
-   Components
-   ========================================================================== */
 
-@import "helpers";
-@import "buttons";
-@import "badges";
-@import "bullets";
-@import "sliding-menu";
-@import "menu-navicons"; /* animated 3 line menu icon */
-@import "notices";
-@import "animations";
-@import "tiles";
-@import "footnotes";
-@import "toc"; /* table of contents */
-@import "breadcrumbs";
-@import "syntax";
 
-/*
-   Page specific
-   ========================================================================== */
+// Use media queries like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
 
-@import "layout";
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "style"
+;
