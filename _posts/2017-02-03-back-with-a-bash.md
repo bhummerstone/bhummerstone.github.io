@@ -15,7 +15,7 @@ Installation can be a bit tricksy, but these are the rough steps. Note you will 
 ![WSL Windows Feature]({{ site.url }}/images/wsl-feature.PNG)
 
 2. Switch on Developer mode in Settings -> Update and Security -> Developer mode, then reboot 
-![Enable Developer mode]({{ site.url }}/assets/developer-mode.PNG)
+![Enable Developer mode]({{ site.url }}/images/developer-mode.PNG)
 
 3. Open a command prompt as administrator, and run the command "bash". You'll need to create a username, and you're all set!
 
