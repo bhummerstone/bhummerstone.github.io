@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "CI/CD with Kubernetes on ACS - Part 1 - Introduction"
-date: 2017-03-29
+date: 2017-04-12
 ---
 
 Part 1 - Introduction (this post)
-Part 2 - [Creating ACS & ACR]()
+Part 2 - [Creating ACS & ACR]({% post_url 2017-04-12-ci-cd-kubernetes-acs-pt2 %})
 Part 3 - [Configuring VSTS]()
 Part 4 - [Kubernetes-ifying Application]()
 Part 5 - [Build Definition]()
@@ -28,4 +28,4 @@ So, starting from the beginning, what you will need to follow along with this se
 
 I used the Azure CLI v2, which you can either install locally or run as a Docker container, but Azure PowerShell should work just fine as well. You can get the Azure CLI v2 from [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli).
 
-When you're ready to go, check out [Part 2]()!
+When you're ready to go, check out [Part 2]({% post_url 2017-04-12-ci-cd-kubernetes-acs-pt2 %})!
