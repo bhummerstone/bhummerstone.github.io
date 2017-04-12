@@ -4,13 +4,13 @@ title: "CI/CD with Kubernetes on ACS - Part 2 - Creating ACS and ACR"
 date: 2017-04-12
 ---
 
-Part 1 - [Introduction]({% post_url 2017-04-12-ci-cd-kubernetes-acs-pt1 %})
-Part 2 - Creating ACS & ACR (this post)
-Part 3 - Configuring VSTS
-Part 4 - Kubernetes-ifying Application
-Part 5 - Build Definition
-Part 6 - Release Definition
-Part 7 - Wrap-up
+Part 1 - [Introduction]({% post_url 2017-04-12-ci-cd-kubernetes-acs-pt1 %})  
+Part 2 - Creating ACS & ACR (this post)  
+Part 3 - Configuring VSTS  
+Part 4 - Kubernetes-ifying Application  
+Part 5 - Build Definition  
+Part 6 - Release Definition  
+Part 7 - Wrap-up  
 
 The first step is to get up and running with Azure and the Azure CLI. You can get a free trial for Azure [here](https://azure.microsoft.com/en-gb/free/), which will give you more than enough credit to get up and running. If you already have an Azure subscription, make sure that you have the necessary permissions to create [Service Principals](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions) as this is required by Kubernetes for configuring the Azure resources.
 

@@ -4,13 +4,13 @@ title: "CI/CD with Kubernetes on ACS - Part 1 - Introduction"
 date: 2017-04-12
 ---
 
-Part 1 - Introduction (this post)
-Part 2 - [Creating ACS & ACR]({% post_url 2017-04-12-ci-cd-kubernetes-acs-pt2 %})
-Part 3 - [Configuring VSTS]()
-Part 4 - [Kubernetes-ifying Application]()
-Part 5 - [Build Definition]()
-Part 6 - [Release Definition]()
-Part 7 - [Wrap-up]()
+Part 1 - Introduction (this post)  
+Part 2 - [Creating ACS & ACR]({% post_url 2017-04-12-ci-cd-kubernetes-acs-pt2 %})  
+Part 3 - [Configuring VSTS]()  
+Part 4 - [Kubernetes-ifying Application]()  
+Part 5 - [Build Definition]()  
+Part 6 - [Release Definition]()  
+Part 7 - [Wrap-up]()  
 
 I read an [article](https://docs.microsoft.com/en-us/azure/container-service/container-service-docker-swarm-setup-ci-cd) recently that discussed implementing Continuous Integration & Continuous Deployment (CI/CD) using Visual Studio Team Services (VSTS) to a Docker Swarm cluster on Azure Container Service (ACS); acronyms-ahoy!
 
