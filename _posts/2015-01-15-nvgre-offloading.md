@@ -12,7 +12,7 @@ However, during my testing, I found that the VMs that were created on these virt
 
 Upon further investigation, I was able to use the PowerShell command
 
-```posh
+``` powershell
 Resolve-DNSName –Name <dns_name> –TCPOnly
 ``` 
 to resolve the necessary IP addresses. After a bit more digging, I discovered that all UDP traffic was being dropped, and since DNS uses UDP port 53, that is why my VMs couldn’t connect to DNS. What could cause just UDP traffic to be dropped? The answer was NVGRE offloading.
