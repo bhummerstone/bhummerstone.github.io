@@ -12,9 +12,10 @@ However, during my testing, I found that the VMs that were created on these virt
 
 Upon further investigation, I was able to use the PowerShell command
 
-``` powershell
+```powershell
 Resolve-DNSName –Name <dns_name> –TCPOnly
-``` 
+```
+ 
 to resolve the necessary IP addresses. After a bit more digging, I discovered that all UDP traffic was being dropped, and since DNS uses UDP port 53, that is why my VMs couldn’t connect to DNS. What could cause just UDP traffic to be dropped? The answer was NVGRE offloading.
 
 It is a difficult time to be a network hardware vendor. With continuing enhancements in network virtualisation, we are starting to see a fundamental shift in how people view network infrastructure in a datacentre. In addition, we are also seeing new technologies come into play to deal with the encapsulation protocols being used, as the encapsulation tends to break a lot of the traditional NIC enhancements made over the years, such as Large Segment Offloading and Virtual Machine Queue.
