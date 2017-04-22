@@ -30,7 +30,7 @@ A few important things to note about the above commands:
 * Interleave = 256KB: how much data is written to each column simultaneously; adjust to suit your workload
 * AllocationUnitSize = 64KB: choose the best size for your workload
 
-I highly recommend checking out [this article] (https://technet.microsoft.com/library/my243829.aspx) on Storage Spaces design to help choose the best configuration for you.
+I highly recommend checking out [this article](https://technet.microsoft.com/library/my243829.aspx) on Storage Spaces design to help choose the best configuration for you.
 
 Once we have the pool configured and a volume created, we can extend it further by adding more virtual disks; remember that the number of disks you will need to add depends on the Resiliency and Column settings you chose above. 
 
