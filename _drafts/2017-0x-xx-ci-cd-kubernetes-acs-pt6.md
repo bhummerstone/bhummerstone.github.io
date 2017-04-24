@@ -15,14 +15,15 @@ Part 7 - [Wrap-up]()
 
 Create release definition
 Releases -> New definition -> Empty
-"Choose later", set agent to k8scicd
+"Choose later", set agent to Hosted
 Link to an artifact source, ensure it is Build source, click Link
 Triggers -> CD -> build reference
 
-Copy file over SSH
+AzureBlob file copy
 SSH endpoint: SSH
-Source: $(System.DefaultWorkingDirectory)/myshop-k8s/drop
-Target: deploy
+Source: $(System.DefaultWorkingDirectory)/myshop-k8s
+Target: storage account
+Output: container URI, container SAS
 
 Run SSH
-	- kubectl apply -f deploy/myshop-deployment.yml --record
+	- kubectl apply -f "$(storageURI)/myshop-deployment.yml$(storageToken)" --record
