@@ -29,6 +29,8 @@ Due to different networking on k8s, need to have different ports within same pod
 	- Ratings: 5002
 	- Recommendations: 5003
 
+Might be better to have separate pods
+
 Changed settings in default.conf for nginx, then Dockerfile & launchSettings.json for each API
 
 Also changed routing config in ShopFront/Views/Home/index.cshtml to reference relative URLs
