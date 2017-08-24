@@ -6,7 +6,7 @@ date: 2017-04-12
 
 Part 1 - Introduction (this post)  
 Part 2 - [Creating ACS & ACR]({% post_url 2017-04-12-ci-cd-kubernetes-acs-pt2 %})  
-Part 3 - [Configuring VSTS]()  
+Part 3 - [Configuring VSTS]({% post_url 2017-08-24-ci-cd-kubernetes-acs-pt3 %})  
 Part 4 - [Kubernetes-ifying Application]()  
 Part 5 - [Build Definition]()  
 Part 6 - [Release Definition]()  

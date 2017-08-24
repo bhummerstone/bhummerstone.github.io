@@ -4,7 +4,7 @@ title: "CI/CD with Kubernetes on ACS - Part 3 - Configuring VSTS"
 date: 2017-08-24
 ---
 
-Part 1 - [Introduction] ({% post_url 2017-04-12-c1-cd-kubernetes-acs-pt1 %})  
+Part 1 - [Introduction]({% post_url 2017-04-12-ci-cd-kubernetes-acs-pt1 %})  
 Part 2 - [Creating ACS & ACR]({% post_url 2017-04-12-ci-cd-kubernetes-acs-pt2 %})  
 Part 3 - Configuring VSTS (this post)  
 Part 4 - [Kubernetes-ifying Application]()  
