@@ -50,7 +50,7 @@ Finaly, it is time to set up the build agent. I used a new Ubuntu 16.04 VM (runn
 
 You'll also need to install a few pre-reqs for the build agent:
 
-``` bash
+```bash
 sudo apt-get install -y libunwind8 libcurl3
 ```
 
