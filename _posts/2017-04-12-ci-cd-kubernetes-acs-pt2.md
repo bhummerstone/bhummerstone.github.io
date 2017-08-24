@@ -6,12 +6,13 @@ date: 2017-04-12
 
 Part 1 - [Introduction]({% post_url 2017-04-12-ci-cd-kubernetes-acs-pt1 %})  
 Part 2 - Creating ACS & ACR (this post)  
-Part 3 - Configuring VSTS  
+Part 3 - [Configuring VSTS]({% post_url 2017-08-24-ci-cd-kubernetes-acs-pt3 %})
 Part 4 - Kubernetes-ifying Application  
 Part 5 - Build Definition  
 Part 6 - Release Definition  
 Part 7 - Wrap-up  
 
+## Install Azure CLI
 The first step is to get up and running with Azure and the Azure CLI. You can get a free trial for Azure [here](https://azure.microsoft.com/en-gb/free/), which will give you more than enough credit to get started. If you already have an Azure subscription, make sure that you have the necessary permissions to create [Service Principals](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions) as this is required by Kubernetes for configuring the Azure resources.
 
 You can get the Azure CLI v2 from [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli).
@@ -30,6 +31,7 @@ Alternatively, depending on your account security settings, you can login using:
 az login -u <username> -p <password>
 ```
 
+## Create the ACS Cluster
 Next step is to create a new Resource Group in Azure to contain all of the resources we are going to be creating:
 
 ```bash
@@ -73,6 +75,8 @@ scp azureuser@bhk8s.westeurope.cloudapp.azure.com:.kube/config $HOME/.kube/confi
 
 You now have a k8s cluster up and running!
 
+
+## Create the ACR
 Before we move on, let's set up our Azure Container Registry (ACR). To do this, we create a storage account, and than an ACR:
 
 ```bash
@@ -103,4 +107,4 @@ kubectl create secret docker-registry bhacr --docker-server=https://<ACR_name>-m
 
 Make sure you remember these settings as we will use them again as (spoliers!) part of the build definition in VSTS.
 
-Now that you're up and running with ACS & ACR, check out [Part 3]() to prepare VSTS.
+Now that you're up and running with ACS & ACR, check out [Part 3]({% post_url 2017-08-24-ci-cd-kubernetes-acs-pt3 %}) to prepare VSTS.
