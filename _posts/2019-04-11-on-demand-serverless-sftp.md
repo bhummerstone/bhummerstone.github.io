@@ -3,9 +3,6 @@ layout: post
 title: "On-Demand, Serverless SFTP"
 date: 2019-04-11
 ---
-# On-demand, serverless SFTP
-
-## Introduction
 
 SSH File Transfer Protocol or SFTP has been around for over 20 years, and still remains a great way to transfer files securely, specifically allowing the use of SSH keys to ensure that only the right users can perform the necessary operations.
 
