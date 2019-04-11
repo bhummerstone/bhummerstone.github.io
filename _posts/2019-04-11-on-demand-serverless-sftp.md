@@ -12,7 +12,7 @@ So I thought about creating an on-demand SFTP service. This could easily be done
 
 Containers are a good choice as a stand-in for VMs: their start times are generally much faster, and they can contain (pun intended) just the services we require; in our case, OpenSSH.
 
-Microsoft Azure provides [Azure Container Instances(ACI)](https://azure.microsoft.com/en-us/services/container-instances/) for this purpose, which is an incredibly easy way to run a container image: just give it an image from Docker Hub and you're pretty much set.
+Microsoft Azure provides [Azure Container Instances (ACI)](https://azure.microsoft.com/en-us/services/container-instances/) for this purpose, which is an incredibly easy way to run a container image: just give it an image from Docker Hub and you're pretty much set.
 
 However, since ACI abstracts away from the underlying infrastructure running these containers, we need to use some kind of remote file system for persistent storage; enter [Azure Files](https://azure.microsoft.com/en-gb/services/storage/files/).
 
@@ -22,7 +22,7 @@ Since I started writing this blog post, this usage of ACI has been made into a f
 
 ## Getting started
 
-I'll be doing all of this in the Azure CLI, which you can download from [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) or access via the Azure Cloud Shell at (https://shell.azure.com). Also, ACI isn't available in all of the Azure regions yet, so I'll be using West Europe; make sure you check availability in your region of choice.
+I'll be doing all of this in the Azure CLI, which you can download from [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) or access via the [Azure Cloud Shell](https://shell.azure.com). Also, ACI isn't available in all of the Azure regions yet, so I'll be using West Europe; make sure you check availability in your region of choice.
 
 Firstly, let's create a new Resource Group to hold the resources we're going to be creating:
 
@@ -39,7 +39,8 @@ az storage account create --name bhstgsftpwe01 --location westeurope --resource-
 Finally, let's create the file share that we'll mount into the ACI:
 
 ```bash
-az
+connection_string = $(az storage account show-connection-string -n <storage-account> -g <resource-group> --query 'connectionString' -o tsv)
+az storage share create --name upload --quota 1024 --connection-string $connection_string
 ```
 
 ## Choosing our image
@@ -113,7 +114,8 @@ az aci delete --name bhsftpaci01 --resource-group bh-rg-sftp-we-01
 
 There are a few potential ways to extend this implementation, or to customise it to meet your requirements. For example:
 
-* Use SSH instead of passwords: this can be achieved by mounting a second Azure Files share into /home/<user>/.ssh/keys; example [here](https://github.com/bhummerstone/azure-templates/blob/master/compute/sftp/sftp-config-file.json)
+* Use SSH instead of passwords: this can be achieved by mounting a second Azure Files share into /home/username/.ssh/keys
+** example [here](https://github.com/bhummerstone/azure-templates/blob/master/compute/sftp/sftp-config-file.json)
 * Create your own custom image with e.g. custom host keys defined
 * Use the ACI Logic Apps connector to create the ACI as part of a wider workflow
 * Run the container image in a Kubernetes cluster with the Azure Files share defined as a persistent volume
