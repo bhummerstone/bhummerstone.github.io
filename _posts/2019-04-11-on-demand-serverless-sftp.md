@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "On-Demand, Serverless SFTP"
-date: 2019-0x-xx
+date: 2019-04-11
 ---
 # On-demand, serverless SFTP
 
@@ -21,7 +21,7 @@ However, since ACI abstracts away from the underlying infrastructure running the
 
 ACI provides native support for mounting Azure Files shares within running containers, so this is perfect for my requirements.
 
-Since I started writing this blog post, this usage of ACI has been made into a formal Azure Sample, so a reference template can be found [here](??)
+Since I started writing this blog post, this usage of ACI has been made into a formal Azure Sample, so a reference template can be found [here](https://azure.microsoft.com/en-gb/resources/samples/sftp-creation-template/).
 
 ## Getting started
 
@@ -37,6 +37,12 @@ Next, we need to create the storage account. This will be used to host our file 
 
 ```bash
 az storage account create --name bhstgsftpwe01 --location westeurope --resource-group bh-rg-sftp-we-01 -sku Standard_LRS --kind Storage
+```
+
+Finally, let's create the file share that we'll mount into the ACI:
+
+```bash
+az
 ```
 
 ## Choosing our image
@@ -95,7 +101,7 @@ This section of the template defines the volume we referenced previously. It is 
 Once we have this template defined, we can deploy it via the Azure CLI:
 
 ```bash
-az group deploy --template-file aci-sftp.json --??
+az group deployment create --resource-group bh-rg-sftp-we-01 --template-file aci-sftp.json --existingFileShareName xxx --existingStorageAccountName yyy ... etc.
 ```
 
 Once deployed, connect via SFTP, copy some files, and they will appear in your Azure Files share. :)
@@ -110,7 +116,7 @@ az aci delete --name bhsftpaci01 --resource-group bh-rg-sftp-we-01
 
 There are a few potential ways to extend this implementation, or to customise it to meet your requirements. For example:
 
-* Use SSH instead of passwords: this can be achieved by mounting a second Azure Files share into /home/<user>/.ssh/keys; example [here](??)
+* Use SSH instead of passwords: this can be achieved by mounting a second Azure Files share into /home/<user>/.ssh/keys; example [here](https://github.com/bhummerstone/azure-templates/blob/master/compute/sftp/sftp-config-file.json)
 * Create your own custom image with e.g. custom host keys defined
 * Use the ACI Logic Apps connector to create the ACI as part of a wider workflow
 * Run the container image in a Kubernetes cluster with the Azure Files share defined as a persistent volume
