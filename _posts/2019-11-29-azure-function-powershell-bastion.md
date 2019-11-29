@@ -31,8 +31,7 @@ az network vnet create --name bh-bastion-vnet --resource-group bh-bastion --loca
 az network public-ip create --name bh-bastion-pip --resource-group bh-bastion --location westeurope --allocation-method Static --sku Standard
 ```
 
-Make a note of the names and Resource Group for these, as we'll need them later. Note that so far the only running cost for this is the Public IP Address, which comes in at £2.72/month... although you probably have a load of these already in use that you can reclaim as they won't be needed any more :)
-
+Make a note of the names and Resource Group for these, as we'll need them later.
 
 ## Step 2 - Creating the Function App
 Now that we have our "landing zone" for the Bastion host, we need a way of deploying and destroying it on a regular basis. There are numerous different ways of doing this, but one that meets all of the requirements is doing this using PowerShell in an Azure Function App. PowerShell support went GA recently, and Azure Functions have some excellent built-in features such as Timer triggers and Managed Identities that align with our goals. We can also run this on a Consumption plan, so we only pay for the time the commands are running: perfect for requirement #2.
@@ -50,7 +49,9 @@ az functionapp config appsettings set --name bhfuncbastion --resource-group bh-b
 ## Step 3 - Setting up Identity and Access Control
 For our Function App to be able to perform actions within Azure, it needs to have permission to deploy and remove resources from the Bastion resource group. Functions has an option to assign a Managed Identity, which is an identity for the Function App itself that exists in Azure Active Directory and can be combined with Role Based Access Control to grant permissions as required; this also ticks off requirement #3.
 
-In our case, let's assign the identity and then give it Contributor access over the Bastion Resource Group. In an ideal world, I would use the following command:
+In our case, let's assign the identity and then give it Contributor access over the Bastion Resource Group. 
+
+In an ideal world, I would use the following command:
 
 ```bash
 az functionapp identity assign --name bhfuncbastion --resource-group bh-bastion --role Contributor --scope $(az group show --name bh-bastion --query 'id' -o tsv)
