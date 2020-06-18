@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Deploying a Linux VM with CMK Disk Encryption using Terraform"
-date: 2020-xx-xx
+date: 2020-06-18
 ---
 
 When deploying resources via Terraform, especially as part of a CI/CD pipeline, one of the main pain points I've seen from a Governance perspective is how best to manage tagging. For example, say I want to define the following tags for filtering and cost management purposes:
