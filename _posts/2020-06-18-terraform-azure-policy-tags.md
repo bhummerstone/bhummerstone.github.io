@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Deploying a Linux VM with CMK Disk Encryption using Terraform"
+title: "Tag Management with Azure Policy and Terraform"
 date: 2020-06-18
 ---
 
