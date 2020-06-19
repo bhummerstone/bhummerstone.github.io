@@ -38,7 +38,7 @@ Luckily, there's a pretty cool way you can do this using some custom lifecycle l
 
 Let's look at our example from earlier. We'll create an Azure Policy and link it to our Subscription to enforce these tags, as well as link some built-in Policies to inherit these tags to resources. Note, you can create and apply this Policy using Terraform... but that's for another time.
 
-![Screenshot of Azure Policy screen showing assigned Policies]({{ site.url }}/images/tf-tags-policies.png)
+![Screenshot of Azure Policy screen showing assigned Policies](../images/tf-tags-policies.png)
 
 To manage the tag lifecycle, we then need to add some code to our Terraform modules. Here, I've got a module that creates an Azure Storage Account, but uses the lifecycle keyword in Terraform to ignore changes to specific Tags:
 
@@ -51,7 +51,7 @@ resource "random_string" "stg_suffix" {
 }
 
 resource "azurerm_storage_account" "stg_acct" {
-  name = "var.name${random_string.stg_suffix.result}"
+  name = "${var.name}${random_string.stg_suffix.result}"
   location = var.location
   resource_group_name = var.rg_name
   account_tier = var.type
@@ -100,10 +100,10 @@ module "tf_tags_stg" {
 
 We see that the Resource Group gets created with the required Tags, the Storage Account is created by Terraform using the placeholder tags, and finally the Storage Account inherits the tags as per the defined Policies:
 
-![Screenshot showing storage account being created with placeholder tags]({{ site.url }}/images/tf-tags-stg-create.png)
+![Screenshot showing storage account being created with placeholder tags](../images/tf-tags-stg-create.png)
 
-![Screenshot showing inherited tags]({{ site.url }}/images/tf-tags-stg-inherit.png)
+![Screenshot showing inherited tags](../images/tf-tags-stg-inherit.png)
 
 If we want to then update the Storage Account from LRS to GRS, we can see that only the replication type is being changed, and not the Tags due to the lifecycle policy we defined in the module:
 
-![Screenshot showing updated Storage Account in Terraform]({{ site.url }}/images/tf-tags-stg-update.png)
+![Screenshot showing updated Storage Account in Terraform](../images/tf-tags-stg-update.png)
