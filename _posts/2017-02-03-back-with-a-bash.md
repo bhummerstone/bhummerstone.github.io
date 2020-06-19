@@ -12,10 +12,10 @@ I've been trying to learn more Linux as part of studying for the LFCS exam, so t
 Installation can be a bit tricksy, but these are the rough steps. Note you will need the Anniversary update for Windows 10:
 
 1. Enable the "Windows Subsystem for Linux" feature, then reboot
-![WSL Windows Feature]({{ site.url }}/images/wsl-feature.PNG)
+![WSL Windows Feature](/images/wsl-feature.PNG)
 
 2. Switch on Developer mode in Settings -> Update and Security -> Developer mode, then reboot 
-![Enable Developer mode]({{ site.url }}/images/developer-mode.PNG)
+![Enable Developer mode](/images/developer-mode.PNG)
 
 3. Open a command prompt as administrator, and run the command "bash". You'll need to create a username, and you're all set!
 
